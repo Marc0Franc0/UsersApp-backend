@@ -2,6 +2,7 @@ package com.app.security.auth;
 
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,14 @@ public class AuthenticationController {
         return ResponseEntity.ok(service.authenticate(request));
     }
 
-
+    @GetMapping("/createadmin")
+    public String createAdmin(){
+		RegisterRequest request= new RegisterRequest();
+		request.setFirstname("admin");
+		request.setLastname("admin");
+		request.setEmail("ADMIN");
+		request.setPassword("666756424438386195874675468516459458541964155413914389387834827342");
+	return	service.registerAdmin(request); 
+	}
     
 }

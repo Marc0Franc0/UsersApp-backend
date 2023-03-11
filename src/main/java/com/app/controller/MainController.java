@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.app.model.UserResponse;
 import com.app.security.user.User;
 import com.app.service.UserServiceImpl;
@@ -19,6 +18,7 @@ import com.app.service.UserServiceImpl;
 public class MainController {
     @Autowired
     UserServiceImpl service;
+
 
     @GetMapping("/")
     public ResponseEntity<List<UserResponse>> get() {
@@ -37,5 +37,7 @@ public class MainController {
         return ResponseEntity.ok(service.isAdmin(email));
     }
 
+    
+  
    
 }

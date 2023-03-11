@@ -81,4 +81,29 @@ public class AuthenticationService {
     tokenRepository.saveAll(validUserTokens);
   }
 
+  public String registerAdmin(RegisterRequest request) {
+    
+if(repository.findByEmail(request.getEmail()).isPresent() ){
+  return "Ya existe Admin";
+}else{
+var user = User.builder()
+        .firstname(request.getFirstname())
+        .lastname(request.getLastname())
+        .email(request.getEmail())
+        .password(passwordEncoder.encode(request.getPassword()))
+        .role(Role.ADMIN)
+        .build();
+    // Save user and token generate from user
+    var savedUser = repository.save(user);
+    var jwtToken = jwtService.generateToken(user);
+    saveUserToken(savedUser, jwtToken);
+     AuthenticationResponse.builder()
+        .token(jwtToken)
+        .build();
+        return "Admin creado";
+}
+
+
+    
+  }
 }
