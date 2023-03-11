@@ -30,12 +30,12 @@ public class WebConfiguration {
         registry
         .addMapping("/**")
         .allowedMethods("*")
-        .allowedOrigins("http://localhost:4200");
+        .allowedOrigins("http://localhost:4200","https://contactosweb.netlify.app/");
 
 
        registry.addMapping("/api/v1/auth/**")
         .allowedMethods("*")
-        .allowedOrigins("http://localhost:4200")
+        .allowedOrigins("http://localhost:4200","https://contactosweb.netlify.app/")
         .exposedHeaders("*");
             }
 

@@ -18,7 +18,7 @@ import com.app.security.user.UserRepository;
 public class AplicationConfig {
 
   private final UserRepository repository;
-    @Bean
+ @Bean
     public UserDetailsService userDetailsService(){
       //Existence of the username
       return username -> repository.findByEmail(username)

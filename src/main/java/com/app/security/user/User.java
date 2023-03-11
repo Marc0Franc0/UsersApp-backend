@@ -1,5 +1,6 @@
 package com.app.security.user;
 
+
 import  com.app.security.token.Token;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
