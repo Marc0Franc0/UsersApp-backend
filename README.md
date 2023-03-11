@@ -24,8 +24,8 @@ To get started with this project, you will need to have the following installed 
 
 To build and run the project, follow these steps:
 
-* Clone the repository: `git clone https://github.com/ali-bouali/spring-boot-3-jwt-security.git`
-* Navigate to the project directory: cd Contactos-backend
+* Clone the repository: `git clone https://github.com/Marc0Franc0/UsersApp-backend`
+* Navigate to the project directory: cd UsersApp-backend
 * Build the project: mvn clean install
 * Run the project: mvn spring-boot:run 
 
